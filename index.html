@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postulaciones</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card img {
+    width: 20%;
+    aspect-ratio: 1 / 1;   /* Hace la imagen cuadrada */
+    object-fit: cover;     /* Recorta sin deformar */
+    border-radius: 8px;
+}
+
+.info h3 {
+    margin: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #5e5e5e;
+    color: white;
+    transition: 0.2s;
+}
+
+button.postulado {
+    background: #4f995f;
+}
+
+.check {
+    margin-left: 8px;
+    font-size: 18px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Farmacias para Postularse 💊</h1>
+
+<!-- ========================= -->
+<!-- EJEMPLO FARMACIA 1 -->
+<!-- ========================= -->
+
+<div class="card" data-id="farmacia1">
+
+    <img src="imagenes/farmacia1.jpg" alt="Farmacia 1">
+
+    <div class="info">
+        <h3>Farmacia Alberdi</h3>
+
+        <a href="https://www.google.com/maps/place/Farmacia+Alberdi:+F%C3%B3rmulas+Magistrales/@-32.9198045,-60.6820474,3a,75y,242.01h,87.7t/data=!3m7!1e1!3m5!1sjFmGBWbyhBK5mwapocOnJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.2980921988039427%26panoid%3DjFmGBWbyhBK5mwapocOnJw%26yaw%3D242.01186443857165!7i16384!8i8192!4m14!1m7!3m6!1s0x95b6535bc0ed40b9:0x3d917fcfd74af692!2sFarmacia+Alberdi:+F%C3%B3rmulas+Magistrales!8m2!3d-32.919869!4d-60.6823013!16s%2Fg%2F1thxrtxn!3m5!1s0x95b6535bc0ed40b9:0x3d917fcfd74af692!8m2!3d-32.919869!4d-60.6823013!16s%2Fg%2F1thxrtxn?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+
+        <a href="https://farmaciaalberdi.com/" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+
+    <button class="postularBtn">
+        Visto <span class="check"></span>
+    </button>
+
+</div>
+
+<!-- ========================= -->
+<!-- PARA AGREGAR OTRA FARMACIA -->
+<!-- COPIÁ DESDE ACA HACIA ABAJO -->
+<!-- ========================= -->
+
+<div class="card" data-id="farmacia2">
+
+    <img src="imagenes/farmacia2.jpg" alt="Farmacia 2">
+
+    <div class="info">
+        <h3>Farmacia FarmaVital</h3>
+
+        <a href="https://www.google.com/maps/place/FarmaVital+Rosario/@-32.9470751,-60.664133,3a,90y,326.43h,90.96t/data=!3m7!1e1!3m5!1sJRasbK3uDn27LmFsqfa26A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.963703017896961%26panoid%3DJRasbK3uDn27LmFsqfa26A%26yaw%3D326.43158114812013!7i16384!8i8192!4m14!1m7!3m6!1s0x95b7ab5d2ccf3289:0x9c8e7c96c2cc5f4d!2sFarmaVital+Rosario!8m2!3d-32.948044!4d-60.6599212!16s%2Fg%2F11b6xj9cd6!3m5!1s0x95b7ab5d2ccf3289:0x9c8e7c96c2cc5f4d!8m2!3d-32.948044!4d-60.6599212!16s%2Fg%2F11b6xj9cd6?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+
+        <a href="https://www.farmavital.com.ar/" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+
+    <button class="postularBtn">
+        Visto <span class="check"></span>
+    </button>
+
+</div>
+
+
+<script>
+
+document.querySelectorAll(".postularBtn").forEach(btn => {
+
+    const card = btn.closest(".card");
+    const id = card.dataset.id;
+    const check = btn.querySelector(".check");
+
+    // Cargar estado guardado
+    if(localStorage.getItem(id) === "true"){
+        check.textContent = "✔";
+        btn.classList.add("postulado");
+    }
+
+    btn.addEventListener("click", () => {
+        const yaPostulado = localStorage.getItem(id) === "true";
+
+        if(yaPostulado){
+            localStorage.setItem(id, "false");
+            check.textContent = "";
+            btn.classList.remove("postulado");
+        } else {
+            localStorage.setItem(id, "true");
+            check.textContent = "✔";
+            btn.classList.add("postulado");
+        }
+    });
+
+});
+
+</script>
+
+</body>
+</html>
