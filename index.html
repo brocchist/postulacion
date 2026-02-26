@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -28,13 +27,6 @@ h1 {
     gap: 10px;
 }
 
-.card img {
-    width: 20%;
-    aspect-ratio: 1 / 1;   /* Hace la imagen cuadrada */
-    object-fit: cover;     /* Recorta sin deformar */
-    border-radius: 8px;
-}
-
 .info h3 {
     margin: 5px 0;
 }
@@ -45,6 +37,11 @@ a {
     font-weight: bold;
 }
 
+.botones{
+    display:flex;
+    gap:10px;
+}
+
 button {
     padding: 10px;
     border: none;
@@ -53,14 +50,18 @@ button {
     font-weight: bold;
     background: #5e5e5e;
     color: white;
-    transition: 0.2s;
 }
 
 button.postulado {
     background: #4f995f;
 }
 
-.check {
+.vistoBtn.visto {
+    background:#4f995f;
+}
+
+.checkVisto,
+.checkPostulado {
     margin-left: 8px;
     font-size: 18px;
 }
@@ -69,20 +70,13 @@ button.postulado {
 </head>
 <body>
 
-<h1>Farmacias para Postularse 💊</h1>
+<h1>MONITOS BONITOS 💊</h1>
 
-<!-- ========================= -->
-<!-- EJEMPLO FARMACIA 1 -->
-<!-- ========================= -->
-
+<!-- FARMACIA 1 -->
 <div class="card" data-id="farmacia1">
-
-    <img src="Imagenes/farmacia1.jpg" alt="Farmacia 1">
-
     <div class="info">
-        <h3>Farmacia Alberdi</h3>
-
-        <a href="https://www.google.com/maps/place/Farmacia+Alberdi:+F%C3%B3rmulas+Magistrales/@-32.9198045,-60.6820474,3a,75y,242.01h,87.7t/data=!3m7!1e1!3m5!1sjFmGBWbyhBK5mwapocOnJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.2980921988039427%26panoid%3DjFmGBWbyhBK5mwapocOnJw%26yaw%3D242.01186443857165!7i16384!8i8192!4m14!1m7!3m6!1s0x95b6535bc0ed40b9:0x3d917fcfd74af692!2sFarmacia+Alberdi:+F%C3%B3rmulas+Magistrales!8m2!3d-32.919869!4d-60.6823013!16s%2Fg%2F1thxrtxn!3m5!1s0x95b6535bc0ed40b9:0x3d917fcfd74af692!8m2!3d-32.919869!4d-60.6823013!16s%2Fg%2F1thxrtxn?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <h3>Farmacia Alberdi (Av. Alberdi al 669)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Alberdi:+F%C3%B3rmulas+Magistrales/@-32.9198045,-60.6820474,3a,75y,248.93h,91.1t/data=!3m7!1e1!3m5!1sjFmGBWbyhBK5mwapocOnJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.0999835927418076%26panoid%3DjFmGBWbyhBK5mwapocOnJw%26yaw%3D248.92905034212754!7i16384!8i8192!4m14!1m7!3m6!1s0x95b6535bc0ed40b9:0x3d917fcfd74af692!2sFarmacia+Alberdi:+F%C3%B3rmulas+Magistrales!8m2!3d-32.919869!4d-60.6823013!16s%2Fg%2F1thxrtxn!3m5!1s0x95b6535bc0ed40b9:0x3d917fcfd74af692!8m2!3d-32.919869!4d-60.6823013!16s%2Fg%2F1thxrtxn?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
             📍 Ver ubicación
         </a><br>
 
@@ -90,67 +84,322 @@ button.postulado {
             🌐 Ir a la página
         </a>
     </div>
-
-    <button class="postularBtn">
-        Visto <span class="check"></span>
-    </button>
-
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
 </div>
-
-<!-- ========================= -->
-<!-- PARA AGREGAR OTRA FARMACIA -->
-<!-- COPIÁ DESDE ACA HACIA ABAJO -->
-<!-- ========================= -->
-
+<!-- FARMACIA 2 -->
 <div class="card" data-id="farmacia2">
-
-    <img src="Imagenes/farmacia2.jpg" alt="Farmacia 2">
-
     <div class="info">
-        <h3>Farmacia FarmaVital</h3>
-
-        <a href="https://www.google.com/maps/place/FarmaVital+Rosario/@-32.9470751,-60.664133,3a,90y,326.43h,90.96t/data=!3m7!1e1!3m5!1sJRasbK3uDn27LmFsqfa26A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.963703017896961%26panoid%3DJRasbK3uDn27LmFsqfa26A%26yaw%3D326.43158114812013!7i16384!8i8192!4m14!1m7!3m6!1s0x95b7ab5d2ccf3289:0x9c8e7c96c2cc5f4d!2sFarmaVital+Rosario!8m2!3d-32.948044!4d-60.6599212!16s%2Fg%2F11b6xj9cd6!3m5!1s0x95b7ab5d2ccf3289:0x9c8e7c96c2cc5f4d!8m2!3d-32.948044!4d-60.6599212!16s%2Fg%2F11b6xj9cd6?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <h3>Farmacia FarmaVital (Martín Rodríguez al 1200)</h3>
+        <a href="https://www.google.com/maps/@-32.9479283,-60.6600142,3a,75y,143.8h,85.12t/data=!3m7!1e1!3m5!1sKTqhCyVTOkDJLf6stEd1aQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.880619215556521%26panoid%3DKTqhCyVTOkDJLf6stEd1aQ%26yaw%3D143.80259536899598!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
             📍 Ver ubicación
         </a><br>
-
         <a href="https://www.farmavital.com.ar/" target="_blank">
             🌐 Ir a la página
         </a>
     </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
 
-    <button class="postularBtn">
-        Visto <span class="check"></span>
-    </button>
+<!-- FARMACIA 3 -->
+<div class="card" data-id="farmacia3">
+    <div class="info">
+        <h3>Farmacia Via Córdoba (Av. Eva Perón al 5739)</h3>
+        <a href="https://www.google.com/maps/place/FARMACIA+VIA+C%C3%93RDOBA+de+turno+hoy/@-32.9350651,-60.7017857,3a,75y,211.82h,85.17t/data=!3m7!1e1!3m5!1sQGf3JrzcDcBHMS8QV-sqfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.831931930657788%26panoid%3DQGf3JrzcDcBHMS8QV-sqfQ%26yaw%3D211.82107763432327!7i16384!8i8192!4m14!1m7!3m6!1s0x95b653344778aeb7:0xdb9740b321a792a8!2sFARMACIA+VIA+C%C3%93RDOBA+de+turno+hoy!8m2!3d-32.9351213!4d-60.7018628!16s%2Fg%2F1tfkxh9y!3m5!1s0x95b653344778aeb7:0xdb9740b321a792a8!8m2!3d-32.9351213!4d-60.7018628!16s%2Fg%2F1tfkxh9y?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://www.farmaciaviacordoba.com.ar/" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
 
+<!-- FARMACIA 4 -->
+<div class="card" data-id="farmacia4">
+    <div class="info">
+        <h3>Farmacia Red Farmashop (San Luis al 2100)</h3>
+        <a href="https://www.google.com/maps/place/Red+Farmashop/@-32.9465827,-60.6525773,3a,73.9y,249.15h,90.21t/data=!3m7!1e1!3m5!1sZTK5k7HnVu1Wr6mT_FuRkA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.2066683312016977%26panoid%3DZTK5k7HnVu1Wr6mT_FuRkA%26yaw%3D249.15050718416862!7i13312!8i6656!4m10!1m2!2m1!1sfarmacia!3m6!1s0x95b7ab401c4ac2d5:0xd0a653220c951337!8m2!3d-32.9466442!4d-60.6526988!15sCghmYXJtYWNpYVoKIghmYXJtYWNpYZIBCHBoYXJtYWN5mgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ4ck0xSkdhRlprUldoYVRGVmtjRTFXV2tWVk1IZzBXakZ2TVdKclJSQULgAQD6AQQIABAa!16s%2Fg%2F11b6j7zqq6?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://redfarmashop.com/" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 5 -->
+<div class="card" data-id="farmacia5">
+    <div class="info">
+        <h3>Farmacia Barchi (Sta Fe al 1483)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Barchi/@-32.9441252,-60.6432917,3a,90y,179.74h,82.5t/data=!3m7!1e1!3m5!1saTpIAYLDyoTRIhYNLrFd6A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.496205788828007%26panoid%3DaTpIAYLDyoTRIhYNLrFd6A%26yaw%3D179.74121856277623!7i16384!8i8192!4m10!1m2!2m1!1sfarmacia!3m6!1s0x95b7ab3d8185ba8d:0x2463f243bdf2fdfb!8m2!3d-32.9441814!4d-60.6433097!15sCghmYXJtYWNpYVoKIghmYXJtYWNpYZIBCHBoYXJtYWN5mgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU10YjJWWGJqSkJSUkFC4AEA-gEECAAQNA!16s%2Fg%2F1vcq8sdc!5m2!1e1!1e4?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://www.facebook.com/FarmaciaBarchi/" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 6 -->
+<div class="card" data-id="farmacia6">
+    <div class="info">
+        <h3>Farmacia Del Siglo (Córdoba al 1480)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Del+Siglo/@-32.9455166,-60.6433107,3a,75y,183.07h,84.11t/data=!3m8!1e1!3m6!1s9dxndUy_fZajRjVvw__jZw!2e0!5s20171001T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D5.893135627665288%26panoid%3D9dxndUy_fZajRjVvw__jZw%26yaw%3D183.06835483532961!7i13312!8i6656!4m10!1m2!2m1!1sfarmacia!3m6!1s0x95b7ab1635b79885:0x384482d076331e8a!8m2!3d-32.9456204!4d-60.64319!15sCghmYXJtYWNpYVoKIghmYXJtYWNpYZIBCHBoYXJtYWN54AEA!16s%2Fg%2F11bwh4nk8f!5m2!1e1!1e4?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://farmaciadelsiglo.com.ar/?v=5b61a1b298a0&utm_source=GG&utm_medium=GG&utm_campaign=GG_BOTONPERFILGG" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 7 -->
+<div class="card" data-id="farmacia7">
+    <div class="info">
+        <h3>Farmacia GO Farma (Córdoba al 2157)</h3>
+        <a href="https://www.google.com/maps/place/GO+Farma/@-32.9438316,-60.6526798,3a,74.5y,189.24h,87.19t/data=!3m8!1e1!3m6!1sxqRYRw9mWHjF5_ympSzj2Q!2e0!5s20251101T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.805567840728898%26panoid%3DxqRYRw9mWHjF5_ympSzj2Q%26yaw%3D189.24087722496313!7i16384!8i8192!4m9!1m2!2m1!1sfarmacia!3m5!1s0x95b7ab40794f020f:0x7094ac2e7f67a8f1!8m2!3d-32.9439761!4d-60.6526335!16s%2Fg%2F11cn5mdfg6!5m2!1e4!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://www.gofarma.com.ar/home" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 8 -->
+<div class="card" data-id="farmacia8">
+    <div class="info">
+        <h3>Farmacia San José (Av. Pellegrini al 1395)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+San+Jos%C3%A9/@-32.9566369,-60.6450093,3a,75y,183.77h,87.58t/data=!3m7!1e1!3m5!1sZrHVHXo-lqeBaOoeGyOfeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D2.41942123241337%26panoid%3DZrHVHXo-lqeBaOoeGyOfeA%26yaw%3D183.7688326752541!7i16384!8i8192!4m11!1m3!2m2!1sfarmacia!6e2!3m6!1s0x95b7ab0e6ce4f129:0xcb0be60e2fee4be3!8m2!3d-32.9567042!4d-60.6449904!15sCghmYXJtYWNpYVoKIghmYXJtYWNpYZIBCHBoYXJtYWN5mgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVVI2ZDA0M016aEJSUkFC4AEA-gEECAAQHQ!16s%2Fg%2F1tf0rt1g!5m2!1e4!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://www.facebook.com/people/Farmacia-San-Jose/100063586026866/#" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 9 -->
+<div class="card" data-id="farmacia9">
+    <div class="info">
+        <h3>Farmacia Victoria (España al 620)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Victoria/@-32.9428532,-60.6459719,3a,75y,263.28h,88.05t/data=!3m7!1e1!3m5!1sAGjhWxyF9zoVmjN944jjQQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9485649266753455%26panoid%3DAGjhWxyF9zoVmjN944jjQQ%26yaw%3D263.2750603327076!7i16384!8i8192!4m9!1m2!2m1!1sfarmacia!3m5!1s0x95b7ab3e78b4cd95:0xac473754748ce682!8m2!3d-32.9429472!4d-60.6460954!16s%2Fg%2F1tdjs9zf!5m2!1e4!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://www.instagram.com/farmaciavictoriarosario/" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 10 -->
+<div class="card" data-id="farmacia10">
+    <div class="info">
+        <h3>Farmacia Montes (Pres. Roca al 901)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Montes/@-32.9463493,-60.6454369,3a,48.7y,141.63h,82.04t/data=!3m7!1e1!3m5!1s5yDm_J8nfSqjttoCyPGZrw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.962800353291655%26panoid%3D5yDm_J8nfSqjttoCyPGZrw%26yaw%3D141.63201788916007!7i16384!8i8192!4m10!1m2!2m1!1sfarmacia!3m6!1s0x95b7ab1673a0da05:0x9c720557c22fb627!8m2!3d-32.9464594!4d-60.6453503!15sCghmYXJtYWNpYVoKIghmYXJtYWNpYZIBCHBoYXJtYWN54AEA!16s%2Fg%2F11c71h6hg4!5m2!1e4!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="https://www.instagram.com/farmaciamontes/" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 11 -->
+<div class="card" data-id="farmacia11">
+    <div class="info">
+        <h3>Farmacia Rosario(San Lorenzo al 1300)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Rosario/@-32.9436162,-60.6403928,3a,90y,242.32h,86.42t/data=!3m8!1e1!3m6!1sfbnalqBgyc2KjxDLbF6eEw!2e0!5s20240201T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D3.579216208006656%26panoid%3DfbnalqBgyc2KjxDLbF6eEw%26yaw%3D242.32153914337417!7i16384!8i8192!4m10!1m2!2m1!1sfarmacia!3m6!1s0x95b7ab3d56521ce9:0xdaeb0bfe70a9eac5!8m2!3d-32.943706!4d-60.6404949!15sCghmYXJtYWNpYVoKIghmYXJtYWNpYZIBCHBoYXJtYWN5mgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5JY0c5UFN6aFJSUkFC4AEA-gEECAAQKQ!16s%2Fg%2F1hc368w8z!5m2!1e1!1e4?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+            🌐 No tiene ???
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 12-->
+<div class="card" data-id="farmacia12">
+    <div class="info">
+        <h3>Farmacia Ovidio Lagos (Av. Ovidio Lagos al 1399) </h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Ovidio+Lagos/@-32.9495965,-60.6632742,3a,90y,100.21h,85.79t/data=!3m7!1e1!3m5!1sLeT8LO749WgeCCVxapjr9A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.21466137704904%26panoid%3DLeT8LO749WgeCCVxapjr9A%26yaw%3D100.20834834878856!7i16384!8i8192!4m10!1m2!2m1!1sfarmacia!3m6!1s0x95b7ab67ffc47ac5:0xbe43d28cb5263cd9!8m2!3d-32.949583!4d-60.663197!15sCghmYXJtYWNpYVoKIghmYXJtYWNpYZIBCHBoYXJtYWN5mgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ0T1VWZEhSVFJqYm1SVFZsVXhlRmRGU2s1V1JFNURWV3RPV0UxSFl4QULgAQD6AQQIABAO!16s%2Fg%2F1tj6v_pg!5m2!1e1!1e4?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+            🌐 No tiene ???
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
+<!-- FARMACIA 13 -->
+<div class="card" data-id="farmacia13">
+    <div class="info">
+        <h3>Farmacia Moroni (Av. Pellegrini al 1571)</h3>
+        <a href="https://www.google.com/maps/place/Farmacia+Moroni/@-32.956157,-60.6474374,3a,64.7y,202.06h,85.85t/data=!3m7!1e1!3m5!1sJCwY1Rl1ykbqT1vO2kQYDg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.149414286241566%26panoid%3DJCwY1Rl1ykbqT1vO2kQYDg%26yaw%3D202.0623677747347!7i16384!8i8192!4m10!1m3!2m2!1sfarmacia!6e2!3m5!1s0x95b7ab0d8cb12865:0x2e53f16ccae565bb!8m2!3d-32.9562945!4d-60.6474904!16s%2Fg%2F1vfn7vfd!5m2!1e4!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+            🌐 No tiene ???
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
 </div>
 
 
+<!-- FARMACIA DUMMY -->
+<div class="card" data-id="farmaciaDUMMY">
+    <div class="info">
+        <h3>-</h3>
+        <a href="-" target="_blank">
+            📍 Ver ubicación
+        </a><br>
+        <a href="-" target="_blank">
+            🌐 Ir a la página
+        </a>
+    </div>
+    <div class="botones">
+        <button class="vistoBtn">
+            Visto <span class="checkVisto"></span>
+        </button>
+        <button class="postularBtn">
+            Me Postulé <span class="checkPostulado"></span>
+        </button>
+    </div>
+</div>
+
 <script>
+document.querySelectorAll(".card").forEach(card => {
 
-document.querySelectorAll(".postularBtn").forEach(btn => {
-
-    const card = btn.closest(".card");
     const id = card.dataset.id;
-    const check = btn.querySelector(".check");
+
+    const vistoBtn = card.querySelector(".vistoBtn");
+    const postularBtn = card.querySelector(".postularBtn");
+
+    const checkVisto = card.querySelector(".checkVisto");
+    const checkPostulado = card.querySelector(".checkPostulado");
+
+    const keyVisto = id + "_visto";
+    const keyPostulado = id + "_postulado";
 
     // Cargar estado guardado
-    if(localStorage.getItem(id) === "true"){
-        check.textContent = "✔";
-        btn.classList.add("postulado");
+    if(localStorage.getItem(keyVisto) === "true"){
+        checkVisto.textContent = "✔";
+        vistoBtn.classList.add("visto");
     }
 
-    btn.addEventListener("click", () => {
-        const yaPostulado = localStorage.getItem(id) === "true";
+    if(localStorage.getItem(keyPostulado) === "true"){
+        checkPostulado.textContent = "✔";
+        postularBtn.classList.add("postulado");
+    }
 
-        if(yaPostulado){
-            localStorage.setItem(id, "false");
-            check.textContent = "";
-            btn.classList.remove("postulado");
-        } else {
-            localStorage.setItem(id, "true");
-            check.textContent = "✔";
-            btn.classList.add("postulado");
-        }
+    // Botón visto
+    vistoBtn.addEventListener("click", () => {
+        const activo = localStorage.getItem(keyVisto) === "true";
+        localStorage.setItem(keyVisto, !activo);
+        checkVisto.textContent = !activo ? "✔" : "";
+        vistoBtn.classList.toggle("visto");
+    });
+
+    // Botón postulado
+    postularBtn.addEventListener("click", () => {
+        const activo = localStorage.getItem(keyPostulado) === "true";
+        localStorage.setItem(keyPostulado, !activo);
+        checkPostulado.textContent = !activo ? "✔" : "";
+        postularBtn.classList.toggle("postulado");
     });
 
 });
@@ -158,5 +407,4 @@ document.querySelectorAll(".postularBtn").forEach(btn => {
 </script>
 
 </body>
-
 </html>
